@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: TestGraph05
+  m_EditorClassIdentifier: Assembly-CSharp::Data.QuestGraphData
+  graphId: 10e117c484ee4b8999ed3b63a95b5c0b
+  title: New Quest
+  nodes:
+  - id: 2af2d0dd4b1f447796982b30c8fbe13e
+    type: 0
+    position: {x: 100, y: 100}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - Out 1
+    condition: {fileID: 0}
+    actions:
+    - {fileID: 0}
+  - id: 1711938f4ff84a0fb99df71f694cab0b
+    type: 2
+    position: {x: 460, y: 100}
+    title: Condition Node
+    description: 
+    jsonPayload: 
+    outputCount: 2
+    outputLabels:
+    - 
+    - 
+    condition: {fileID: 0}
+    actions: []
+  - id: c1db063e62ef4fbcb94a004f5e148a6d
+    type: 5
+    position: {x: 1520, y: 80}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition: {fileID: 0}
+    actions: []
+  - id: bd68e270cf204a148cd5f308e6953408
+    type: 3
+    position: {x: 1100, y: -0}
+    title: Reward Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition: {fileID: 0}
+    actions: []
+  - id: b04b2343a5094fab8d1918b55377edd3
+    type: 4
+    position: {x: 800, y: 100}
+    title: Sequence Node
+    description: 
+    jsonPayload: 
+    outputCount: 3
+    outputLabels:
+    - 
+    - 
+    - 
+    condition: {fileID: 0}
+    actions: []
+  - id: 07db1a8052f548c88c75d2b38359efec
+    type: 1
+    position: {x: 1100, y: 260}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition: {fileID: 0}
+    actions: []
+  - id: 18516aaf5af04b8fa0247f5bce6cc8a3
+    type: 1
+    position: {x: 1100, y: 120}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition: {fileID: 0}
+    actions: []

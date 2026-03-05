@@ -1,0 +1,217 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: GatherCoins
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 2dc1fb15c22848f1864bb44a1352e6cd
+  title: Gather coins
+  nodes:
+  - id: 013bb21b101d47488bccfee5c69184ab
+    type: 0
+    position: {x: 260, y: 500}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: 0e452ebbea10421a80cf50622fda3f2f
+    type: 1
+    position: {x: 560, y: 500}
+    title: Objective Node - Event_CoinPickedUp
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 2765327024206905644
+    actions: []
+  - id: 49f4d3d7472d49bb8fdba4188d2be7cf
+    type: 3
+    position: {x: 860, y: 500}
+    title: Action Node - AddCoins
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 2765327024206905645
+    - rid: 2765327024206905646
+  - id: 8b29df5716c847ddb3a1577b58e9f9dd
+    type: 2
+    position: {x: 1160, y: 620}
+    title: Condition Node - CheckForEnoughCoins
+    description: 
+    jsonPayload: 
+    outputCount: 2
+    outputLabels:
+    - 
+    - 
+    condition:
+      rid: 2765327024206905648
+    actions: []
+  - id: 507fed3b7f824df69610f1c3ce755c0e
+    type: 3
+    position: {x: 1460, y: 500}
+    title: Action Node - RaiseEvent_EnoughCoins
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 2765327024206905649
+    - rid: 2765327024206905650
+  - id: dda382d0f502422d8b6d9e0a13ee6292
+    type: 5
+    position: {x: 2360, y: 500}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  - id: 63b42a17b90541518a3a7ad785404935
+    type: 1
+    position: {x: 1760, y: 500}
+    title: Objective Node - Event_SubtractCoins
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 7831000434468454467
+    actions: []
+  - id: cc4ded8aa2ed42e5acbd2b25770cf2a7
+    type: 3
+    position: {x: 2060, y: 500}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 2765327254153330752
+    - rid: 2765327254153330754
+  connections:
+  - from:
+      nodeId: 013bb21b101d47488bccfee5c69184ab
+      portIndex: 0
+    to:
+      nodeId: 0e452ebbea10421a80cf50622fda3f2f
+      portIndex: 0
+  - from:
+      nodeId: 0e452ebbea10421a80cf50622fda3f2f
+      portIndex: 0
+    to:
+      nodeId: 49f4d3d7472d49bb8fdba4188d2be7cf
+      portIndex: 0
+  - from:
+      nodeId: 49f4d3d7472d49bb8fdba4188d2be7cf
+      portIndex: 0
+    to:
+      nodeId: 8b29df5716c847ddb3a1577b58e9f9dd
+      portIndex: 0
+  - from:
+      nodeId: 8b29df5716c847ddb3a1577b58e9f9dd
+      portIndex: 1
+    to:
+      nodeId: 0e452ebbea10421a80cf50622fda3f2f
+      portIndex: 0
+  - from:
+      nodeId: 8b29df5716c847ddb3a1577b58e9f9dd
+      portIndex: 0
+    to:
+      nodeId: 507fed3b7f824df69610f1c3ce755c0e
+      portIndex: 0
+  - from:
+      nodeId: 507fed3b7f824df69610f1c3ce755c0e
+      portIndex: 0
+    to:
+      nodeId: 63b42a17b90541518a3a7ad785404935
+      portIndex: 0
+  - from:
+      nodeId: 63b42a17b90541518a3a7ad785404935
+      portIndex: 0
+    to:
+      nodeId: cc4ded8aa2ed42e5acbd2b25770cf2a7
+      portIndex: 0
+  - from:
+      nodeId: cc4ded8aa2ed42e5acbd2b25770cf2a7
+      portIndex: 0
+    to:
+      nodeId: dda382d0f502422d8b6d9e0a13ee6292
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2765327024206905644
+      type: {class: InboxEventCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: f3fa82663e54c7f469dbf1fb7388bdbb, type: 2}
+        consumeOnSuccess: 1
+    - rid: 2765327024206905645
+      type: {class: AddItemAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        itemId: coin
+        amount: 1
+    - rid: 2765327024206905646
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: Added 1 coin to the player.
+    - rid: 2765327024206905648
+      type: {class: IntVarCompareCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        key: inv.coin
+        op: 4
+        value: 4
+    - rid: 2765327024206905649
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: Player has enough coins.
+    - rid: 2765327024206905650
+      type: {class: RaiseEventAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: cdb19e8fd7f6aa84285fd2f5947b3a6a, type: 2}
+        amount: 1
+        targetId: 
+    - rid: 2765327254153330752
+      type: {class: SubtractIntVarAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        key: inv.coin
+        delta: 4
+    - rid: 2765327254153330754
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: Subtracting coins from player.
+    - rid: 7831000434468454467
+      type: {class: InboxEventCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: 79242a5567b2b8c4285a49295cb9a8e2, type: 2}
+        consumeOnSuccess: 1

@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: GetKeyToDoor
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 5abfdd9936914b3b924cdc25068d2408
+  title: Get key to door
+  nodes:
+  - id: 2c285af4eefb479d993c1c08ebe64455
+    type: 0
+    position: {x: 380, y: 80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: edaee57a8a2b46b882aa79bf5b202b83
+    type: 1
+    position: {x: 680, y: 80}
+    title: Objective Node - Event_PickedUpKey
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 2765327364846518337
+    actions: []
+  - id: 31c1f19d42eb42a89ad1332fda8d4613
+    type: 3
+    position: {x: 980, y: 80}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 7831000434468454479
+    - rid: 7831000434468454484
+  - id: c1cdfeea716f49f3b51328d476b675f6
+    type: 5
+    position: {x: 1280, y: 80}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  connections:
+  - from:
+      nodeId: edaee57a8a2b46b882aa79bf5b202b83
+      portIndex: 0
+    to:
+      nodeId: 31c1f19d42eb42a89ad1332fda8d4613
+      portIndex: 0
+  - from:
+      nodeId: 31c1f19d42eb42a89ad1332fda8d4613
+      portIndex: 0
+    to:
+      nodeId: c1cdfeea716f49f3b51328d476b675f6
+      portIndex: 0
+  - from:
+      nodeId: 2c285af4eefb479d993c1c08ebe64455
+      portIndex: 0
+    to:
+      nodeId: edaee57a8a2b46b882aa79bf5b202b83
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2765327364846518337
+      type: {class: InboxEventCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: 015daca9d371f6647bdb63676f0f6210, type: 2}
+        consumeOnSuccess: 1
+    - rid: 7831000434468454479
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: Player picked up key.
+    - rid: 7831000434468454484
+      type: {class: SetBoolVarAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        key: door.canOpen
+        value: 1

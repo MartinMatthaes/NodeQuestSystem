@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: TestGraph04
+  m_EditorClassIdentifier: Assembly-CSharp::QuestGraphData
+  graphId: 3436055262a24761807cbc0d3853790a
+  title: New Quest
+  nodes:
+  - id: 5241e5d54df344578efef415a7c08c1e
+    type: 0
+    position: {x: 420, y: -80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+  - id: a53c7dd45dd74a2e90b91207e6a38329
+    type: 2
+    position: {x: 780, y: -120}
+    title: Condition Node
+    description: 
+    jsonPayload: 
+  - id: a220cad0453f4074bd7fb82a6cb2b49d
+    type: 3
+    position: {x: 1080, y: -140}
+    title: Reward Node
+    description: 
+    jsonPayload: 
+  connections:
+  - fromId: 5241e5d54df344578efef415a7c08c1e
+    toId: a53c7dd45dd74a2e90b91207e6a38329
+  - fromId: a53c7dd45dd74a2e90b91207e6a38329
+    toId: a220cad0453f4074bd7fb82a6cb2b49d

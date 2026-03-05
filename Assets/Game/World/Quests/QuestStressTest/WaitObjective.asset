@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: WaitObjective
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: a2c9d90b0c3b4c4d91043a8be412b67c
+  title: WaitObjective
+  nodes:
+  - id: 5c16a1b8cfee4a698c52d87a86fb228d
+    type: 0
+    position: {x: 80, y: 80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: fa566ab2d1be4e47bdceea3dee386419
+    type: 1
+    position: {x: 380, y: 80}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 7597042685421289564
+    actions: []
+  - id: 627a8a8173ca4e238e6704a7f284a3a8
+    type: 3
+    position: {x: 680, y: 80}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 7597042685421289565
+  - id: 9961ea2ec6924bcb9226c0968a469c0d
+    type: 5
+    position: {x: 980, y: 80}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  connections:
+  - from:
+      nodeId: 5c16a1b8cfee4a698c52d87a86fb228d
+      portIndex: 0
+    to:
+      nodeId: fa566ab2d1be4e47bdceea3dee386419
+      portIndex: 0
+  - from:
+      nodeId: fa566ab2d1be4e47bdceea3dee386419
+      portIndex: 0
+    to:
+      nodeId: 627a8a8173ca4e238e6704a7f284a3a8
+      portIndex: 0
+  - from:
+      nodeId: 627a8a8173ca4e238e6704a7f284a3a8
+      portIndex: 0
+    to:
+      nodeId: 9961ea2ec6924bcb9226c0968a469c0d
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7597042685421289564
+      type: {class: InboxEventCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: f3fa82663e54c7f469dbf1fb7388bdbb, type: 2}
+        consumeOnSuccess: 1
+    - rid: 7597042685421289565
+      type: {class: SetBoolVarAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        key: q2.done
+        value: 1

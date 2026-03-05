@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: TestGraph01
+  m_EditorClassIdentifier: Assembly-CSharp::QuestGraphData
+  graphId: da72cd59d32f457889732d1247a68a53
+  title: New Quest
+  nodes:
+  - id: fdf8d19d3d41491f8fda884a8dd7fdaf
+    type: 1
+    position: {x: 173, y: 46}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+  - id: 41e88b3fc9b642b28fc230e9eb3239a6
+    type: 2
+    position: {x: 489, y: 44}
+    title: Condition Node
+    description: 
+    jsonPayload: 
+  - id: 17705c16040745aa8f401eeb8c605622
+    type: 4
+    position: {x: 900, y: 57}
+    title: End Node
+    description: 
+    jsonPayload: 
+  - id: 3bede97b135146529d107298d2d08b3a
+    type: 4
+    position: {x: 899, y: 221}
+    title: End Node
+    description: 
+    jsonPayload: 
+  connections:
+  - fromId: fdf8d19d3d41491f8fda884a8dd7fdaf
+    toId: 41e88b3fc9b642b28fc230e9eb3239a6
+  - fromId: 41e88b3fc9b642b28fc230e9eb3239a6
+    toId: 17705c16040745aa8f401eeb8c605622
+  - fromId: 41e88b3fc9b642b28fc230e9eb3239a6
+    toId: 3bede97b135146529d107298d2d08b3a

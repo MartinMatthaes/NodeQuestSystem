@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: SetVariable
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 056d922aa3474815901b3803ff3d8748
+  title: SetVariable
+  nodes:
+  - id: 2bb4a7a28bd94fa4b772a20d831ec931
+    type: 0
+    position: {x: 80, y: 80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: 61dc4127a6cf474190f51347e463f6c6
+    type: 3
+    position: {x: 380, y: 80}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 7597042685421289563
+  - id: 9aada8dcc3424f3186f305da72c0c41e
+    type: 5
+    position: {x: 680, y: 80}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  connections:
+  - from:
+      nodeId: 2bb4a7a28bd94fa4b772a20d831ec931
+      portIndex: 0
+    to:
+      nodeId: 61dc4127a6cf474190f51347e463f6c6
+      portIndex: 0
+  - from:
+      nodeId: 61dc4127a6cf474190f51347e463f6c6
+      portIndex: 0
+    to:
+      nodeId: 9aada8dcc3424f3186f305da72c0c41e
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7597042685421289563
+      type: {class: SetBoolVarAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        key: q1.started
+        value: 1

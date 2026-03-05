@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: ParallelQuests
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 324e4f7faf484a128242e968249a0bb6
+  title: ParallelQuests
+  nodes:
+  - id: 5c58ec00fe4d4136b42394644ab9d59e
+    type: 0
+    position: {x: 80, y: 80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: 3f29b30f97d946199dd8611136645003
+    type: 1
+    position: {x: 380, y: 80}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 7597042685421289575
+    actions: []
+  - id: 5f44ff42f29840a1afbbba1891acaf1f
+    type: 3
+    position: {x: 680, y: 80}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 7597042685421289576
+  - id: 0fb007ad093344b7bdcd7361a0334729
+    type: 5
+    position: {x: 980, y: 80}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  connections:
+  - from:
+      nodeId: 5c58ec00fe4d4136b42394644ab9d59e
+      portIndex: 0
+    to:
+      nodeId: 3f29b30f97d946199dd8611136645003
+      portIndex: 0
+  - from:
+      nodeId: 3f29b30f97d946199dd8611136645003
+      portIndex: 0
+    to:
+      nodeId: 5f44ff42f29840a1afbbba1891acaf1f
+      portIndex: 0
+  - from:
+      nodeId: 5f44ff42f29840a1afbbba1891acaf1f
+      portIndex: 0
+    to:
+      nodeId: 0fb007ad093344b7bdcd7361a0334729
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7597042685421289575
+      type: {class: BoolVarCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        key: external.trigger
+    - rid: 7597042685421289576
+      type: {class: SetBoolVarAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        key: q5.done
+        value: 1

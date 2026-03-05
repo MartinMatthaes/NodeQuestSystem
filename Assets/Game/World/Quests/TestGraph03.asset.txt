@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: TestGraph03
+  m_EditorClassIdentifier: Assembly-CSharp::QuestGraphData
+  graphId: e8696ba4d41944b3b85bdf06e651133d
+  title: New Quest
+  nodes:
+  - id: 0931657b54024bdabe0a121969298425
+    type: 0
+    position: {x: 10, y: -187.5}
+    title: Start Node
+    description: 
+    jsonPayload: 
+  - id: e2b17052ee4a47dcaaa845ea94aa0c3a
+    type: 2
+    position: {x: 364.093, y: -193.61967}
+    title: Condition Node
+    description: 
+    jsonPayload: 
+  - id: a40acec889034c14aff3f6092a27510f
+    type: 1
+    position: {x: 700, y: -200}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+  - id: 3714ee5ec5ca4894b790f1d9e279aee2
+    type: 3
+    position: {x: 980, y: -200}
+    title: Reward Node
+    description: 
+    jsonPayload: 
+  - id: 04a68e0f24ee42e6bead3bf6d68faa77
+    type: 4
+    position: {x: 1320, y: -220}
+    title: End Node
+    description: 
+    jsonPayload: 
+  - id: bd682956014f49aabb2c4a91070d25f7
+    type: 3
+    position: {x: 560, y: -480}
+    title: Reward Node
+    description: 
+    jsonPayload: 
+  - id: b586a6800e244145b2fb9597044e154e
+    type: 4
+    position: {x: 1100, y: -480}
+    title: End Node
+    description: 
+    jsonPayload: 
+  - id: 239dd3d834554b8ab69fed8b43b2490f
+    type: 4
+    position: {x: 1327, y: 261}
+    title: End Node
+    description: 
+    jsonPayload: 
+  connections:
+  - fromId: 0931657b54024bdabe0a121969298425
+    toId: e2b17052ee4a47dcaaa845ea94aa0c3a
+  - fromId: e2b17052ee4a47dcaaa845ea94aa0c3a
+    toId: a40acec889034c14aff3f6092a27510f
+  - fromId: a40acec889034c14aff3f6092a27510f
+    toId: 3714ee5ec5ca4894b790f1d9e279aee2
+  - fromId: 3714ee5ec5ca4894b790f1d9e279aee2
+    toId: 04a68e0f24ee42e6bead3bf6d68faa77
+  - fromId: e2b17052ee4a47dcaaa845ea94aa0c3a
+    toId: bd682956014f49aabb2c4a91070d25f7
+  - fromId: bd682956014f49aabb2c4a91070d25f7
+    toId: b586a6800e244145b2fb9597044e154e

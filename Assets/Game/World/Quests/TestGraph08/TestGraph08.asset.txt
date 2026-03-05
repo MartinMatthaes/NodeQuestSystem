@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: TestGraph08
+  m_EditorClassIdentifier: Assembly-CSharp::Data.QuestGraphData
+  graphId: b314b1d163814f3c991f9b2cfad3f87f
+  title: New Quest
+  nodes:
+  - id: 4176f2e380d04e6bb54b5ca7dcd974e8
+    type: 0
+    position: {x: 60, y: 100}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: 3af91ed9416246b791aa24b8155438c7
+    type: 4
+    position: {x: 420, y: 100}
+    title: Sequence Node
+    description: 
+    jsonPayload: 
+    outputCount: 2
+    outputLabels:
+    - 
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: -2
+  - id: 324d49bf8be7476d8d11509d99ae894b
+    type: 1
+    position: {x: 800, y: -100}
+    title: Objective Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: -2
+  - id: c77cbb7cb6ff49739b7cce0c223d54b7
+    type: 3
+    position: {x: 800, y: 100}
+    title: Reward Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: -2
+  - id: c85aabe244b04725a783638992c55277
+    type: 5
+    position: {x: 1200, y: 100}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  connections:
+  - _from:
+      nodeId: 4176f2e380d04e6bb54b5ca7dcd974e8
+      portIndex: 0
+    _to:
+      nodeId: 3af91ed9416246b791aa24b8155438c7
+      portIndex: 0
+  - _from:
+      nodeId: 3af91ed9416246b791aa24b8155438c7
+      portIndex: 0
+    _to:
+      nodeId: 324d49bf8be7476d8d11509d99ae894b
+      portIndex: 0
+  - _from:
+      nodeId: 3af91ed9416246b791aa24b8155438c7
+      portIndex: 1
+    _to:
+      nodeId: c77cbb7cb6ff49739b7cce0c223d54b7
+      portIndex: 0
+  - _from:
+      nodeId: c77cbb7cb6ff49739b7cce0c223d54b7
+      portIndex: 0
+    _to:
+      nodeId: c85aabe244b04725a783638992c55277
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

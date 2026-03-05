@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: EndlesssLoop
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 93994a784b0f4f928a91550aa8d66792
+  title: EndlesssLoop
+  nodes:
+  - id: dbd54180291a4f51930b52b0ddd2437e
+    type: 0
+    position: {x: 80, y: 80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: a5f5f98e2e5544ecbb3f2c24f5453efd
+    type: 3
+    position: {x: 380, y: 80}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 7597042685421289569
+  - id: 63e252918bab46b19cf3543c89577c59
+    type: 3
+    position: {x: 700, y: 200}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 7597042685421289570
+  connections:
+  - from:
+      nodeId: dbd54180291a4f51930b52b0ddd2437e
+      portIndex: 0
+    to:
+      nodeId: a5f5f98e2e5544ecbb3f2c24f5453efd
+      portIndex: 0
+  - from:
+      nodeId: a5f5f98e2e5544ecbb3f2c24f5453efd
+      portIndex: 0
+    to:
+      nodeId: 63e252918bab46b19cf3543c89577c59
+      portIndex: 0
+  - from:
+      nodeId: 63e252918bab46b19cf3543c89577c59
+      portIndex: 0
+    to:
+      nodeId: a5f5f98e2e5544ecbb3f2c24f5453efd
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7597042685421289569
+      type: {class: AddIntVarAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        key: loop
+        delta: 1
+    - rid: 7597042685421289570
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: One loop completed.

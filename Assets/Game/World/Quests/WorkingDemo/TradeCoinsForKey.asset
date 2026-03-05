@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: TradeCoinsForKey
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 4efde5aaa66845f6ba4c2b03f2ec3f3b
+  title: Trade coins for key
+  nodes:
+  - id: 70e3125c7a5140a7834cbcc114bb2084
+    type: 0
+    position: {x: 120, y: 100}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: 4a125e3cf49f4b7e8355062491042c26
+    type: 5
+    position: {x: 1320, y: 100}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  - id: 85da185a0ff9438b93a693603199b0cc
+    type: 1
+    position: {x: 420, y: 100}
+    title: Objective Node - Event_CanTalkToStatue
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 2765327024206905429
+    actions: []
+  - id: 637531b3c29f490297d44ee8b4bd8c53
+    type: 3
+    position: {x: 1020, y: 100}
+    title: Action Node - RaiseEvent_SubtractCoins + SpawnKey
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 2765327024206905631
+    - rid: 7831000434468454466
+    - rid: 7831000434468454473
+    - rid: 7831000434468454476
+  - id: e94cadadfe0049d7996102e30b64cdce
+    type: 1
+    position: {x: 720, y: 100}
+    title: Objective Node - Event_TradedWithStatue
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: 7831000434468454465
+    actions: []
+  connections:
+  - from:
+      nodeId: 70e3125c7a5140a7834cbcc114bb2084
+      portIndex: 0
+    to:
+      nodeId: 85da185a0ff9438b93a693603199b0cc
+      portIndex: 0
+  - from:
+      nodeId: 85da185a0ff9438b93a693603199b0cc
+      portIndex: 0
+    to:
+      nodeId: e94cadadfe0049d7996102e30b64cdce
+      portIndex: 0
+  - from:
+      nodeId: 637531b3c29f490297d44ee8b4bd8c53
+      portIndex: 0
+    to:
+      nodeId: 4a125e3cf49f4b7e8355062491042c26
+      portIndex: 0
+  - from:
+      nodeId: e94cadadfe0049d7996102e30b64cdce
+      portIndex: 0
+    to:
+      nodeId: 637531b3c29f490297d44ee8b4bd8c53
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2765327024206905429
+      type: {class: InboxEventCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: cdb19e8fd7f6aa84285fd2f5947b3a6a, type: 2}
+        consumeOnSuccess: 1
+    - rid: 2765327024206905631
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: Talked with statue.
+    - rid: 7831000434468454465
+      type: {class: InboxEventCondition, ns: QuestPlugin.Runtime.Conditions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: 73d1ec7514fa67f4484ed3eb18089fde, type: 2}
+        consumeOnSuccess: 1
+    - rid: 7831000434468454466
+      type: {class: RaiseEventAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: 79242a5567b2b8c4285a49295cb9a8e2, type: 2}
+        amount: 1
+        targetId: 
+    - rid: 7831000434468454473
+      type: {class: SpawnPrefabAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        prefab: {fileID: 4977418181168796247, guid: 74072470c3ce8c14cade3306bc98243a,
+          type: 3}
+        spawnPointKey: {fileID: 11400000, guid: b772b91f79a06e4488f6cfef226bace2,
+          type: 2}
+        parentKey: {fileID: 0}
+        fallbackPosition: {x: 0, y: 0, z: 0}
+        amount: 1
+    - rid: 7831000434468454476
+      type: {class: RaiseEventAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        eventAsset: {fileID: 11400000, guid: 26ecf7debce279e4cb69e5c77ef41cb8, type: 2}
+        amount: 1
+        targetId: 

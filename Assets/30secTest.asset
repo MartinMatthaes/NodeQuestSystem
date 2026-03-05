@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0883630095f24d545a65440bbbca5680, type: 3}
+  m_Name: 30secTest
+  m_EditorClassIdentifier: Assembly-CSharp::QuestPlugin.Runtime.Data.QuestGraphData
+  graphId: 1b02373f43c443ceae41f53cb9842ba8
+  title: New Quest
+  nodes:
+  - id: eb64a6d300c74c4c9f52eeb569218422
+    type: 0
+    position: {x: 160, y: 80}
+    title: Start Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions: []
+  - id: fc94b652199646419adf3598c5a3fe62
+    type: 3
+    position: {x: 460, y: 80}
+    title: Action Node
+    description: 
+    jsonPayload: 
+    outputCount: 1
+    outputLabels:
+    - 
+    condition:
+      rid: -2
+    actions:
+    - rid: 2765327364846518272
+  - id: e4633cf6b9c540639be0467848babb8b
+    type: 5
+    position: {x: 760, y: 80}
+    title: End Node
+    description: 
+    jsonPayload: 
+    outputCount: 0
+    outputLabels: []
+    condition:
+      rid: -2
+    actions: []
+  connections:
+  - from:
+      nodeId: eb64a6d300c74c4c9f52eeb569218422
+      portIndex: 0
+    to:
+      nodeId: fc94b652199646419adf3598c5a3fe62
+      portIndex: 0
+  - from:
+      nodeId: fc94b652199646419adf3598c5a3fe62
+      portIndex: 0
+    to:
+      nodeId: e4633cf6b9c540639be0467848babb8b
+      portIndex: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2765327364846518272
+      type: {class: DebugLogAction, ns: QuestPlugin.Runtime.Actions, asm: Assembly-CSharp}
+      data:
+        message: testing
